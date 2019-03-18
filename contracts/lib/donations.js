@@ -62,7 +62,7 @@ class Donation extends Contract {
      * @param {String} itemId id of the item to be donated (eg. ITEM1)
      * @param {Integer} amount amount of units of the item to be donated
     */
-    async addDonation(ctx, donationId, projectId, itemId, amount) {
+    async addDonation(ctx, donationId, projectId, itemId, amount, timestamp) {
 
         // check if the project id exists
         let projectMatch = projects.filter(
@@ -84,7 +84,7 @@ class Donation extends Contract {
             project_id: projectId,
             item_id: itemId,
             amount,
-            timestamp: Date.now(),
+            timestamp,
             docType: 'donation',
 
         };

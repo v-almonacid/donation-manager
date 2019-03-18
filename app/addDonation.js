@@ -39,7 +39,15 @@ async function main() {
         const contract = network.getContract('donationscc');
 
         // Evaluate the specified transaction.
-        await contract.submitTransaction('addDonation', 'DON1', 'PRO0', 'ITEM1', '1000');
+        let timestamp = Date.now();
+        await contract.submitTransaction(
+            'addDonation',
+            'DON1',
+            'PRO0',
+            'ITEM1',
+            '1000',
+            timestamp
+        );
 
         await gateway.disconnect();
 
