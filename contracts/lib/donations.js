@@ -80,4 +80,4 @@ class Donations extends Contract {
 
 }
 
-module.exports = MyTestCc;
+module.exports = Donations;
