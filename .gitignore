@@ -1,0 +1,6 @@
+# hyperledger binaries
+/bin
+/config
+
+# node
+node_modules/
