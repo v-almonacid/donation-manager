@@ -4,7 +4,7 @@
 
 'use strict';
 
-const Donations = require('./lib/donations');
+const Donation = require('./lib/donations');
 
-module.exports.Donations = Donations;
-module.exports.contracts = [ Donations ];
+module.exports.Donation = Donation;
+module.exports.contracts = [ Donation ];

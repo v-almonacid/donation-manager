@@ -12,7 +12,7 @@ export MSYS_NO_PATHCONV=1
 
 starttime=$(date +%s)
 CC_RUNTIME_LANGUAGE=node # chaincode runtime language is node.js
-CC_SRC_PATH=/opt/gopath/src/github.com/
+CC_SRC_PATH=/opt/gopath/src/github.com/  # mapped to contracts/
 
 
 # clean the keystore
