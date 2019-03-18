@@ -1,0 +1,35 @@
+{
+  "name": "donations",
+  "version": "1.0.0",
+  "description": "Hyperledger Fabric sample chaincode to manage donations",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "nyc mocha --recursive",
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "nyc mocha --recursive",
+    "start": "fabric-chaincode-node start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/v-almonacid/donations-manager.git"
+  },
+  "keywords": [
+    "hyperledger",
+    "fabric",
+    "chaincode"
+  ],
+  "author": "v-almonacid",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/v-almonacid/donations-manager/issues"
+  },
+  "homepage": "https://github.com/v-almonacid/donations-manager#readme",
+  "dependencies": {
+    "fabric-contract-api": "^1.4.0",
+    "fabric-shim": "^1.4.0"
+  }
+}
