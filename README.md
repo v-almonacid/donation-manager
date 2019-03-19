@@ -18,13 +18,19 @@ curl -sSL http://bit.ly/2ysbOFE | bash -s -- 1.4.0 -s
 ```
 This script will install the Hyperledger Fabric binaries and create two directories (`bin/` and `config/`). The `-s` option avoids cloning the fabric samples repository.
 
-## Interacting with the Backend
-Go to the `app/` folder and install node dependencies:
+## Start Fabric and Install and Instantiate the Chaincode
+From the project root
 ```
 cd app/
+./startFabric.sh
+```
+## Interacting with the Backend
+Still inside the `app/` folder, install node dependencies:
+```
 npm install
 ```
-Then, enroll the `admin` and register `user1`:
+Make sure you have Fabric already running (see above).
+Then, you may enroll the `admin` and register `user1`:
 ```
 node enrollAdmin.js
 node registerUser.js
