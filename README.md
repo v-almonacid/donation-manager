@@ -33,5 +33,18 @@ You can now query the ledger to see the registered donations:
 ```
 node query.js
 ```
+You may also submit a new donation to the ledger using using the script `addDonation.js`:
+```
+node addDonation.js
+```
+Note that the donation parameters are hard-coded in the script.
 
 ## Testing
+Assuming you have already deployed the chaincode over the basic network environment:
+```
+cd app/
+npm run test
+```
+
+TODO:
+  - Setup a proper (non-persistent) testing environment
