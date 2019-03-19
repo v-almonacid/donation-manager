@@ -57,7 +57,15 @@ it('should add a new donation in the ledger', async () => {
     await gateway.connect(ccp, { wallet, identity: 'user1', discovery: { enabled: false } });
     const network = await gateway.getNetwork('mychannel');
     const contract = network.getContract('donationscc');
-    await contract.submitTransaction('addDonation', 'DON2', 'PRO1', 'ITEM1', '2');
+    let timestamp = Date.now().toString();
+    await contract.submitTransaction(
+        'addDonation',
+        'DON2',
+        'PRO1',
+        'ITEM1',
+        '2',
+        timestamp
+    );
     let result = await contract.evaluateTransaction('queryDonation', 'DON2');
     let resultAsJson = JSON.parse(JSON.parse(result));
     assert.equal(resultAsJson.project_id, 'PRO1');
