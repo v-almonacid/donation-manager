@@ -42,7 +42,7 @@ class Donation extends Contract {
                 project_id: 'PRO0',
                 item_id: 'ITEM0',
                 amount: 100,
-                timestamp: Date.now()
+                timestamp: 1552981497621
             },
         ];
 
@@ -60,9 +60,9 @@ class Donation extends Contract {
      * @param {String} donationId donation identifier (eg. DON1)
      * @param {String} projectId id of the beneficiary project (eg. PRO1)
      * @param {String} itemId id of the item to be donated (eg. ITEM1)
-     * @param {Integer} amount amount of units of the item to be donated
+     * @param {String} amount amount of units of the item to be donated
     */
-    async addDonation(ctx, donationId, projectId, itemId, amount) {
+    async addDonation(ctx, donationId, projectId, itemId, amount, timestamp) {
 
         // check if the project id exists
         let projectMatch = projects.filter(
@@ -80,11 +80,15 @@ class Donation extends Contract {
             throw new Error(`The item does not exist`);
         }
 
+        if (isNaN(amount)) {
+            throw new Error('amount is not a valid number');
+        }
+
         let donation = {
             project_id: projectId,
             item_id: itemId,
             amount,
-            timestamp: Date.now(),
+            timestamp,
             docType: 'donation',
 
         };
@@ -133,7 +137,6 @@ class Donation extends Contract {
     }
 
 }
-
 
 
 module.exports = Donation;
