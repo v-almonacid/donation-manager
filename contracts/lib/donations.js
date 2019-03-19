@@ -42,7 +42,7 @@ class Donation extends Contract {
                 project_id: 'PRO0',
                 item_id: 'ITEM0',
                 amount: 100,
-                timestamp: Date.now()
+                timestamp: 1552981497621
             },
         ];
 
